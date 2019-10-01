@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">clockApp</string>
+
+    <string name = "cityNameString1"> Sydney</string>
+    <string name = "cityNameString2"> New York</string>
+    <string name = "cityNameString3"> Shanghai</string>
+    <string name = "cityNameString4"> London</string>
+    <string name = "cityNameString5"> Paris</string>
+
+
 </resources>

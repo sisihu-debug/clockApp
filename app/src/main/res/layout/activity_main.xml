@@ -6,15 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id = "@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+
+            <include
+                android:id="@+id/city1"
+                layout="@layout/city_chunk"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                />
+
+            <include
+                android:id="@+id/city2"
+                layout="@layout/city_chunk"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+
+            <include
+                android:id="@+id/city3"
+                layout="@layout/city_chunk"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <include
+                android:id="@+id/city4"
+                layout="@layout/city_chunk"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <include
+                android:id="@+id/city5"
+                layout="@layout/city_chunk"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content" />
+
+            <Switch
+                android:id="@+id/toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="24 Hour"
+                android:textColorLink="#FF5722" />
+
+<!--            <android.widget.TextClock-->
+<!--                android:id="@+id/digitalClock"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:timeZone="GMT+0000"-->
+<!--            android:format24Hour="dd MMM yyyy   k:mm:ss"-->
+<!--            android:format12Hour="@null"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_alignParentEnd="true" />-->
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-    /Users/sisihu/AndroidStudioProjects/clockApp/app
