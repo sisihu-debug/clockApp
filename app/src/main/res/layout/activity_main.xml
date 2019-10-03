@@ -8,82 +8,115 @@
 
 
     <ScrollView
-        android:id = "@+id/scrollView"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+
+        android:layout_weight="15"
+        android:fillViewport="true"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:orientation="vertical">
+
+            android:orientation="vertical"
+            >
 
 
             <include
                 android:id="@+id/city1"
                 layout="@layout/city_chunk"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <include
                 android:id="@+id/city2"
                 layout="@layout/city_chunk"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
             <include
                 android:id="@+id/city3"
                 layout="@layout/city_chunk"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <include
                 android:id="@+id/city4"
                 layout="@layout/city_chunk"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
             <include
                 android:id="@+id/city5"
                 layout="@layout/city_chunk"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-            <Switch
-                android:id="@+id/toggle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="24 Hour"
-                android:textColorLink="#FF5722" />
 
-<!--            <android.widget.TextClock-->
-<!--                android:id="@+id/digitalClock"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:timeZone="GMT+0000"-->
-<!--            android:format24Hour="dd MMM yyyy   k:mm:ss"-->
-<!--            android:format12Hour="@null"-->
-<!--            android:textStyle="bold"-->
-<!--            android:layout_alignParentEnd="true" />-->
+
+
+
 
         </LinearLayout>
-
-
-
 
 
     </ScrollView>
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Hello World!"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:layout_editor_absoluteY="1497dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/hour12Button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="12 Hour"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            tools:layout_editor_absoluteX="88dp"
+
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+
+            android:color="@color/alabaster">
+
+        </Button>
+
+        <Button
+            android:id="@+id/hour24Button"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+
+            android:text="24 Hour"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="10dp"
+
+            android:color="@color/alabaster"
+            >
+
+        </Button>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

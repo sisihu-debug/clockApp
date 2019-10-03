@@ -7,8 +7,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         //declaring all the cities' names
 
-        TextView cityName1 = clock1.findViewById(R.id.cityName);
+        final TextView cityName1 = clock1.findViewById(R.id.cityName);
         TextView cityName2 = clock2.findViewById(R.id.cityName);
         TextView cityName3 = clock3.findViewById(R.id.cityName);
         TextView cityName4 = clock4.findViewById(R.id.cityName);
@@ -77,8 +80,14 @@ public class MainActivity extends AppCompatActivity {
         cityName4.setText(R.string.cityNameString4);
         cityName5.setText(R.string.cityNameString5);
 
+        cityName1.setText("Sydney    ");
+        cityName2.setText("New York");
+        cityName3.setText("Shanghai");
+        cityName4.setText("London   ");
+        cityName5.setText("Paris       ");
+
         //declaring all city pictures
-        ImageView cityImage1 = clock1.findViewById(R.id.cityImage);
+        final ImageView cityImage1 = clock1.findViewById(R.id.cityImage);
         ImageView cityImage2 = clock2.findViewById(R.id.cityImage);
         ImageView cityImage3 = clock3.findViewById(R.id.cityImage);
         ImageView cityImage4 = clock4.findViewById(R.id.cityImage);
@@ -92,22 +101,175 @@ public class MainActivity extends AppCompatActivity {
 
         //declaring all the clock times
 
-        final TextView cityTime1 = clock1.findViewById(R.id.cityTime);
-        TextView cityTime2 = clock2.findViewById(R.id.cityTime);
-        TextView cityTime3 = clock3.findViewById(R.id.cityTime);
-        TextView cityTime4 = clock4.findViewById(R.id.cityTime);
-        TextView cityTime5 = clock5.findViewById(R.id.cityTime);
+        final TextClock cityTime1 = clock1.findViewById(R.id.cityTime);
+        final TextClock cityTime2 = clock2.findViewById(R.id.cityTime);
+        final TextClock cityTime3 = clock3.findViewById(R.id.cityTime);
+        final TextClock cityTime4 = clock4.findViewById(R.id.cityTime);
+        final TextClock cityTime5 = clock5.findViewById(R.id.cityTime);
+
+
+        //display time in different time zones
+
+
+        cityTime1.setTimeZone("Australia/Sydney");
+        cityTime2.setTimeZone("America/New_York");
+        cityTime3.setTimeZone("Asia/Shanghai");
+        cityTime4.setTimeZone("Europe/London");
+        cityTime5.setTimeZone("Europe/Paris");
+
+        //Attempt1: switch betweeen 24hr and 12hr
+        //switch between 12hr and 24hr
+
+        //Switch timeToggle = findViewById(R.id.toggle);
+
+        //timeToggle.setOnCheckedChangeListener(this);
+
+
+        //Attempt2: button 12hr and 24hr
+
+        //declare buttons
+        Button switchTo12Button = findViewById(R.id.hour12Button);
+        Button switchTo24Button = findViewById(R.id.hour24Button);
+
+        //set methods for switch between 12hr and 24hr
+
+        switchTo24Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+//                CharSequence text = "Hello skittles!";
+//                CharSequence text2 = "Something else";
+//                int duration = Toast.LENGTH_SHORT;
+//
+//                Toast toast = Toast.makeText(context, text, duration);
+//                toast.show();
+
+//                        cityTime1.setFormat24Hour("hh:mm");
+                //cityTime1.setFormat24Hour("HH:mm:ss");
+                final String DEFAULT_FORCED_24_HOUR_FORMAT = "kk:mm";
+
+                cityTime1.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
+                cityTime2.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
+                cityTime3.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
+                cityTime4.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
+                cityTime5.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
+
+//                cityName1.setHeight(0);
+//                cityImage1.setVisibility(View.GONE);
+//                cityTime1.setHeight(0);
+
+
+
+
+
+//                Toast toast2 = Toast.makeText(context, text2, duration);
+//                toast2.show();
+//
+//
+            }
+//
+
+        });
+
+
+        switchTo12Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = getApplicationContext();
+//                CharSequence text = "Hello skittles!";
+//                CharSequence text2 = "Something else";
+//                int duration = Toast.LENGTH_SHORT;
+//
+//                Toast toast = Toast.makeText(context, text, duration);
+//                toast.show();
+
+//                        cityTime1.setFormat24Hour("hh:mm");
+                //cityTime1.setFormat24Hour("HH:mm:ss");
+                final String DEFAULT_FORCED_12_HOUR_FORMAT = "hh:mm a";
+
+                //reference: https://medium.com/@tapuranjannahak/android-textclock-customization-to-deviate-from-system-time-format-b1ab05db7f3a
+
+                cityTime1.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
+                cityTime2.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
+                cityTime3.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
+                cityTime4.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
+                cityTime5.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
+
+
+                //cityTime1.setHei
+
+
+//                Toast toast2 = Toast.makeText(context, text2, duration);
+//                toast2.show();
+//
+//
+            }
+//
+
+        });
+
+
+        //Declare hide switches
+
+        final Switch city1hide = clock1.findViewById(R.id.hideSwitch);
+
+        city1hide.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                if(city1hide.isChecked()) {
+
+                    cityName1.setHeight(0);
+                    cityImage1.setVisibility(View.GONE);
+                    cityTime1.setHeight(0);
+                } else {
+                    cityName1.setHeight(70);
+                    cityImage1.setVisibility(View.VISIBLE);
+                    cityTime1.setHeight(70);
+
+
+                }
+
+
+            }
+        });
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+//    @Override
+//    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//        if(timeToggle.isChecked()){
+//            textView.setText("Swich On");
+//        }else{
+//            textView.setText("Swich Off");
+//        }
+//    }
+
+
 
         //Attempt 1 which gets point in time
 
             //1a) getting system time
 
-                LocalTime time = LocalTime.now();
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+//                LocalTime time = LocalTime.now();
+//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 
             //1b) display time
 
-                cityTime1.setText(time.format(formatter));
+//                cityTime1.setText(time.format(formatter));
 
         //Attempt 2 real time
 
@@ -192,5 +354,5 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
-    }
-}
+
+

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">clockApp</string>
+    <string name="app_name">World Clock</string>
 
     <string name = "cityNameString1"> Sydney</string>
     <string name = "cityNameString2"> New York</string>
