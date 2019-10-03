@@ -56,9 +56,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <Button
+                android:id="@+id/hide1Switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hide"
 
 
-
+                tools:layout_editor_absoluteX="313dp"
+                tools:layout_editor_absoluteY="405dp" />
 
 
         </LinearLayout>
@@ -115,6 +121,17 @@
             >
 
         </Button>
+
+<!--        <Button-->
+<!--            android:id="@+id/hideSwitch"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="hide"-->
+
+
+<!--            tools:layout_editor_absoluteX="313dp"-->
+<!--            tools:layout_editor_absoluteY="405dp"-->
+<!--            />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

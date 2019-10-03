@@ -33,16 +33,7 @@
         app:layout_constraintEnd_toStartOf="@+id/cityTime"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/cityTime"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingLeft="16dp"-->
-<!--        android:paddingRight="16dp"-->
-<!--        android:text="12:00"-->
-<!--        android:textSize="35dp"-->
-<!--        app:layout_constraintBaseline_toBaselineOf="@+id/cityName"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />  -->
+
 
     <TextClock
         android:id="@+id/cityTime"
@@ -60,15 +51,16 @@
         android:fontFamily="sans-serif"
         />
 
-    <Switch
-        android:id="@+id/hideSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOn="Unhide"
-        android:textOff="Hide"
-        tools:layout_editor_absoluteX="313dp"
-        tools:layout_editor_absoluteY="405dp"
-        android:checked="true"/>
+<!--    <Button-->
+<!--        android:id="@+id/hideSwitch"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="hide"-->
+
+
+<!--        tools:layout_editor_absoluteX="313dp"-->
+<!--        tools:layout_editor_absoluteY="405dp"-->
+<!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

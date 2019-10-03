@@ -23,32 +23,8 @@ import java.util.GregorianCalendar;
 import java.lang.*;
 
 public class MainActivity extends AppCompatActivity {
-    //static time
 
-//    public static void main(String[] args) {
-//        while (true) {
-//            try {
-//                Thread.sleep(60 * 1000); //one minute
-//
-//                Calendar calendar = new GregorianCalendar();
-//                String hour;
-//                int time = calendar.get(Calendar.HOUR);
-//                int m = calendar.get(Calendar.MINUTE);
-//                int sec = calendar.get(Calendar.SECOND);
-//
-//                if (calendar.get(Calendar.AM_PM) == 0)
-//                    hour = "A.M.";
-//                else
-//                    hour = "P.M.";
-//                System.out.println(time + ":" + m + ":" + sec + " " + hour);
-//                cityTime1.setText(time + ":" + m + ":" + sec + " " + hour);
-//
-//
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
+
 
 
     @Override
@@ -85,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         cityName3.setText("Shanghai");
         cityName4.setText("London   ");
         cityName5.setText("Paris       ");
+
+
 
         //declaring all city pictures
         final ImageView cityImage1 = clock1.findViewById(R.id.cityImage);
@@ -144,8 +122,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast toast = Toast.makeText(context, text, duration);
 //                toast.show();
 
-//                        cityTime1.setFormat24Hour("hh:mm");
-                //cityTime1.setFormat24Hour("HH:mm:ss");
+//
                 final String DEFAULT_FORCED_24_HOUR_FORMAT = "kk:mm";
 
                 cityTime1.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
@@ -176,15 +153,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-//                CharSequence text = "Hello skittles!";
-//                CharSequence text2 = "Something else";
-//                int duration = Toast.LENGTH_SHORT;
 //
-//                Toast toast = Toast.makeText(context, text, duration);
-//                toast.show();
-
-//                        cityTime1.setFormat24Hour("hh:mm");
-                //cityTime1.setFormat24Hour("HH:mm:ss");
                 final String DEFAULT_FORCED_12_HOUR_FORMAT = "hh:mm a";
 
                 //reference: https://medium.com/@tapuranjannahak/android-textclock-customization-to-deviate-from-system-time-format-b1ab05db7f3a
@@ -196,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 cityTime5.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
 
 
-                //cityTime1.setHei
+
 
 
 //                Toast toast2 = Toast.makeText(context, text2, duration);
@@ -211,28 +180,109 @@ public class MainActivity extends AppCompatActivity {
 
         //Declare hide switches
 
-        final Switch city1hide = clock1.findViewById(R.id.hideSwitch);
+        //final Switch city1hide = clock1.findViewById(R.id.hideSwitch);
 
-        city1hide.setOnClickListener(new View.OnClickListener(){
+//        Attempt 1:
+        //        city1hide.setOnClickListener(new View.OnClickListener(){
+        //            @Override
+        //            public void onClick(View v){
+        //
+        //                if(city1hide.isChecked()) {
+        //
+        //                    cityName1.setHeight(0);
+        //                    cityImage1.setVisibility(View.GONE);
+        //                    cityTime1.setHeight(0);
+        //                } else {
+        //                    cityName1.setHeight(70);
+        //                    cityImage1.setVisibility(View.VISIBLE);
+        //                    cityTime1.setHeight(70);
+        //
+        //
+        //                }
+        //
+        //
+        //            }
+        //        });
+
+
+        //  Attempt2:
+
+//        city1hide.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (city1hide.isChecked()) {
+//
+////                    Context context = getApplicationContext();
+////                CharSequence text = "Hello skittles!";
+////                CharSequence text2 = "Something else";
+////                int duration = Toast.LENGTH_SHORT;
+////
+////                Toast toast = Toast.makeText(context, text, duration);
+////                toast.show();
+//
+//                    cityName1.setText("this is wrong");
+//
+//                    cityName1.setHeight(0);
+//                    cityImage1.setVisibility(View.GONE);
+//                    cityTime1.setHeight(0);
+//                } else {
+//                    cityName1.setHeight(70);
+//                    cityImage1.setVisibility(View.VISIBLE);
+//                    cityTime1.setHeight(70);
+//                }
+//            }
+//        });
+
+        // Attempt 3:
+
+//        Button city1hide = clock1.findViewById(R.id.hideSwitch);
+//
+//
+//
+//        city1hide.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                cityImage1.setImageAlpha(0);
+////
+//            }
+////
+//
+//        });
+
+
+        //Attempt4:
+
+//        city1hide.setChecked(true);
+//        city1hide.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
+//                if (bChecked) {
+//                    cityImage1.setImageAlpha(0);
+//                } else {
+//                    cityImage1.setImageAlpha(0);
+//                }
+//            }
+//        });
+
+
+        //Attempt 5
+
+
+        Button hide1Button = findViewById(R.id.hideSwitch);
+
+        hide1Button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
-                if(city1hide.isChecked()) {
-
-                    cityName1.setHeight(0);
-                    cityImage1.setVisibility(View.GONE);
-                    cityTime1.setHeight(0);
-                } else {
-                    cityName1.setHeight(70);
-                    cityImage1.setVisibility(View.VISIBLE);
-                    cityTime1.setHeight(70);
-
-
-                }
-
+                cityName1.setHeight(0);
+                cityImage1.setVisibility(View.GONE);
+                cityTime1.setHeight(0);
 
             }
         });
+
+
+
 
 
     }
@@ -249,96 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-//    @Override
-//    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//        if(timeToggle.isChecked()){
-//            textView.setText("Swich On");
-//        }else{
-//            textView.setText("Swich Off");
-//        }
-//    }
 
-
-
-        //Attempt 1 which gets point in time
-
-            //1a) getting system time
-
-//                LocalTime time = LocalTime.now();
-//                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-
-            //1b) display time
-
-//                cityTime1.setText(time.format(formatter));
-
-        //Attempt 2 real time
-
-//            while (true) {
-//                try {
-//                    LocalTime time = LocalTime.now();
-//                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-//                    cityTime1.setText(time.format(formatter));
-//
-//                    //Thread.sleep(60 * 1000); //one minute
-//
-////                    Calendar calendar = new GregorianCalendar();
-////                    String hour;
-////                    int time = calendar.get(Calendar.HOUR);
-////                    int m = calendar.get(Calendar.MINUTE);
-////                    int sec = calendar.get(Calendar.SECOND);
-//
-////                    if (calendar.get(Calendar.AM_PM) == 0)
-////                        hour = "A.M.";
-////                    else
-////                        hour = "P.M.";
-////                    System.out.println(time + ":" + m + ":" + sec + " " + hour);
-//
-//
-//
-////                    cityTime1.setText(time.format(formatter));
-//
-//
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-
-            //Attempt 3: real time code changes
-
-//        final Thread thread = new Thread() {
-//
-//            @Override
-//            public void run() {
-//                try {
-//                    while (!thread.isInterrupted()) {
-//                        Thread.sleep(1000);
-//                        runOnUiThread(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                // update TextView here!
-//                                LocalTime time = LocalTime.now();
-//                                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-//                                cityTime1.setText(time.format(formatter));
-//                            }
-//                        });
-//                    }
-//                } catch (InterruptedException e) {
-//                }
-//            }
-//        };
-//
-//        thread.start();
-
-
-
-
-
-
-
-
-
-
-        //setting button notification
 
 //        Button abc = newsItem1.findViewById(R.id.shareButton);
 //        abc.setOnClickListener(new View.OnClickListener() {
