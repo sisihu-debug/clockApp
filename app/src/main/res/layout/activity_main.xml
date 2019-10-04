@@ -7,132 +7,198 @@
     tools:context=".MainActivity">
 
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        android:layout_weight="15"
-        android:fillViewport="true"
-        android:overScrollMode="never">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
             >
-
-
-            <include
-                android:id="@+id/city1"
-                layout="@layout/city_chunk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <include
-                android:id="@+id/city2"
-                layout="@layout/city_chunk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-
-            <include
-                android:id="@+id/city3"
-                layout="@layout/city_chunk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <include
-                android:id="@+id/city4"
-                layout="@layout/city_chunk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <include
-                android:id="@+id/city5"
-                layout="@layout/city_chunk"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/hide1Switch"
+                android:id="@+id/hour12Button"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+
+                android:gravity="center"
+                android:text="12 Hour"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                tools:layout_editor_absoluteX="88dp">
+
+            </Button>
+
+            <Button
+                android:id="@+id/hour24Button"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+
+                android:gravity="center"
+
+                android:background="@color/colorPrimaryDark"
+
+
+                android:text="24 Hour"
+                android:textAlignment="center"
+
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent">
+
+            </Button>
+
+            <!--        <Button-->
+            <!--            android:id="@+id/hideSwitch"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="hide"-->
+
+
+            <!--            tools:layout_editor_absoluteX="313dp"-->
+            <!--            tools:layout_editor_absoluteY="405dp"-->
+            <!--            />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="15"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hide"
 
 
-                tools:layout_editor_absoluteX="313dp"
-                tools:layout_editor_absoluteY="405dp" />
+                android:orientation="vertical">
 
 
-        </LinearLayout>
+                <include
+                    android:id="@+id/city1"
+                    layout="@layout/city_chunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/hide1Switch"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:paddingLeft="10dp"
+                    android:layout_marginLeft="300dp"
 
 
-    </ScrollView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        tools:layout_editor_absoluteY="1497dp"
-        android:layout_weight="1"
-        android:background="@color/white">
-
-        <Button
-            android:id="@+id/hour12Button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="12 Hour"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-
-            tools:layout_editor_absoluteX="88dp"
-
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="10dp"
-
-            android:color="@color/alabaster">
-
-        </Button>
-
-        <Button
-            android:id="@+id/hour24Button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-
-            android:text="24 Hour"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+                    tools:layout_editor_absoluteX="313dp"
+                    tools:layout_editor_absoluteY="405dp"
 
 
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-
-            android:layout_marginRight="60dp"
-            android:layout_marginTop="10dp"
-
-            android:color="@color/alabaster"
-            >
-
-        </Button>
-
-<!--        <Button-->
-<!--            android:id="@+id/hideSwitch"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="hide"-->
 
 
-<!--            tools:layout_editor_absoluteX="313dp"-->
-<!--            tools:layout_editor_absoluteY="405dp"-->
-<!--            />-->
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    />
+
+                <include
+                    android:id="@+id/city2"
+                    layout="@layout/city_chunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/hide2Switch"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:paddingLeft="10dp"
+
+
+                    tools:layout_editor_absoluteX="313dp"
+                    tools:layout_editor_absoluteY="405dp"
+                    android:layout_marginLeft="300dp" />
+
+
+                <include
+                    android:id="@+id/city3"
+                    layout="@layout/city_chunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/hide3Switch"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:paddingLeft="10dp"
+
+
+                    tools:layout_editor_absoluteX="313dp"
+                    tools:layout_editor_absoluteY="405dp"
+                    android:layout_marginLeft="300dp"/>
+
+                <include
+                    android:id="@+id/city4"
+                    layout="@layout/city_chunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/hide4Switch"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:paddingLeft="10dp"
+
+
+                    tools:layout_editor_absoluteX="313dp"
+                    tools:layout_editor_absoluteY="405dp"
+                    android:layout_marginLeft="300dp"/>
+
+                <include
+                    android:id="@+id/city5"
+                    layout="@layout/city_chunk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/hide5Switch"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:paddingLeft="10dp"
+
+
+                    tools:layout_editor_absoluteX="313dp"
+                    tools:layout_editor_absoluteY="405dp"
+                    android:layout_marginLeft="300dp"/>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/cityImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
 
 
         app:layout_constraintEnd_toStartOf="@+id/cityName"
@@ -18,22 +18,22 @@
 
         android:layout_marginLeft="10dp"/>
 
+
     <TextView
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:gravity="center"
         android:text="City Name"
-        android:textSize="30dp"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cityTime"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.507" />
 
     <TextClock
         android:id="@+id/cityTime"
@@ -51,16 +51,6 @@
         android:fontFamily="sans-serif"
         />
 
-<!--    <Button-->
-<!--        android:id="@+id/hideSwitch"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="hide"-->
-
-
-<!--        tools:layout_editor_absoluteX="313dp"-->
-<!--        tools:layout_editor_absoluteY="405dp"-->
-<!--        />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,24 +1,21 @@
 package com.example.clockapp;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
-import android.widget.CompoundButton;
+
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
+
 import android.widget.TextClock;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 import java.lang.*;
 
@@ -33,20 +30,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //declaring all the clocks
-        ConstraintLayout clock1 = findViewById(R.id.city1);
-        ConstraintLayout clock2 = findViewById(R.id.city2);
-        ConstraintLayout clock3 = findViewById(R.id.city3);
-        ConstraintLayout clock4 = findViewById(R.id.city4);
-        ConstraintLayout clock5 = findViewById(R.id.city5);
+        final ConstraintLayout clock1 = findViewById(R.id.city1);
+        final ConstraintLayout clock2 = findViewById(R.id.city2);
+        final ConstraintLayout clock3 = findViewById(R.id.city3);
+        final ConstraintLayout clock4 = findViewById(R.id.city4);
+        final ConstraintLayout clock5 = findViewById(R.id.city5);
 
 
         //declaring all the cities' names
 
         final TextView cityName1 = clock1.findViewById(R.id.cityName);
-        TextView cityName2 = clock2.findViewById(R.id.cityName);
-        TextView cityName3 = clock3.findViewById(R.id.cityName);
-        TextView cityName4 = clock4.findViewById(R.id.cityName);
-        TextView cityName5 = clock5.findViewById(R.id.cityName);
+        final TextView cityName2 = clock2.findViewById(R.id.cityName);
+        final TextView cityName3 = clock3.findViewById(R.id.cityName);
+        final TextView cityName4 = clock4.findViewById(R.id.cityName);
+        final TextView cityName5 = clock5.findViewById(R.id.cityName);
 
         //setting cities names
 
@@ -66,10 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
         //declaring all city pictures
         final ImageView cityImage1 = clock1.findViewById(R.id.cityImage);
-        ImageView cityImage2 = clock2.findViewById(R.id.cityImage);
-        ImageView cityImage3 = clock3.findViewById(R.id.cityImage);
-        ImageView cityImage4 = clock4.findViewById(R.id.cityImage);
-        ImageView cityImage5 = clock5.findViewById(R.id.cityImage);
+        final ImageView cityImage2 = clock2.findViewById(R.id.cityImage);
+        final ImageView cityImage3 = clock3.findViewById(R.id.cityImage);
+        final ImageView cityImage4 = clock4.findViewById(R.id.cityImage);
+        final ImageView cityImage5 = clock5.findViewById(R.id.cityImage);
 
         cityImage1.setImageResource(R.drawable.sydney);
         cityImage2.setImageResource(R.drawable.newyork);
@@ -95,17 +92,9 @@ public class MainActivity extends AppCompatActivity {
         cityTime4.setTimeZone("Europe/London");
         cityTime5.setTimeZone("Europe/Paris");
 
-        //Attempt1: switch betweeen 24hr and 12hr
-        //switch between 12hr and 24hr
-
-        //Switch timeToggle = findViewById(R.id.toggle);
-
-        //timeToggle.setOnCheckedChangeListener(this);
 
 
-        //Attempt2: button 12hr and 24hr
-
-        //declare buttons
+        //declare 12Hour and 24Hour toggle buttons
         Button switchTo12Button = findViewById(R.id.hour12Button);
         Button switchTo24Button = findViewById(R.id.hour24Button);
 
@@ -115,12 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
-//                CharSequence text = "Hello skittles!";
-//                CharSequence text2 = "Something else";
-//                int duration = Toast.LENGTH_SHORT;
 //
-//                Toast toast = Toast.makeText(context, text, duration);
-//                toast.show();
 
 //
                 final String DEFAULT_FORCED_24_HOUR_FORMAT = "kk:mm";
@@ -131,16 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 cityTime4.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
                 cityTime5.setFormat12Hour(DEFAULT_FORCED_24_HOUR_FORMAT);
 
-//                cityName1.setHeight(0);
-//                cityImage1.setVisibility(View.GONE);
-//                cityTime1.setHeight(0);
-
-
-
-
-
-//                Toast toast2 = Toast.makeText(context, text2, duration);
-//                toast2.show();
+//
 //
 //
             }
@@ -164,119 +139,178 @@ public class MainActivity extends AppCompatActivity {
                 cityTime4.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
                 cityTime5.setFormat12Hour(DEFAULT_FORCED_12_HOUR_FORMAT);
 
-
-
-
-
-//                Toast toast2 = Toast.makeText(context, text2, duration);
-//                toast2.show();
-//
-//
             }
 //
 
         });
 
 
-        //Declare hide switches
 
-        //final Switch city1hide = clock1.findViewById(R.id.hideSwitch);
-
-//        Attempt 1:
-        //        city1hide.setOnClickListener(new View.OnClickListener(){
-        //            @Override
-        //            public void onClick(View v){
-        //
-        //                if(city1hide.isChecked()) {
-        //
-        //                    cityName1.setHeight(0);
-        //                    cityImage1.setVisibility(View.GONE);
-        //                    cityTime1.setHeight(0);
-        //                } else {
-        //                    cityName1.setHeight(70);
-        //                    cityImage1.setVisibility(View.VISIBLE);
-        //                    cityTime1.setHeight(70);
-        //
-        //
-        //                }
-        //
-        //
-        //            }
-        //        });
+        //declare all hide buttons
 
 
-        //  Attempt2:
+        final Button hide1Button = findViewById(R.id.hide1Switch);
+        final Button hide2Button = findViewById(R.id.hide2Switch);
+        final Button hide3Button = findViewById(R.id.hide3Switch);
+        final Button hide4Button = findViewById(R.id.hide4Switch);
+        final Button hide5Button = findViewById(R.id.hide5Switch);
 
-//        city1hide.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if (city1hide.isChecked()) {
-//
-////                    Context context = getApplicationContext();
-////                CharSequence text = "Hello skittles!";
-////                CharSequence text2 = "Something else";
-////                int duration = Toast.LENGTH_SHORT;
-////
-////                Toast toast = Toast.makeText(context, text, duration);
-////                toast.show();
-//
-//                    cityName1.setText("this is wrong");
-//
-//                    cityName1.setHeight(0);
-//                    cityImage1.setVisibility(View.GONE);
-//                    cityTime1.setHeight(0);
-//                } else {
-//                    cityName1.setHeight(70);
-//                    cityImage1.setVisibility(View.VISIBLE);
-//                    cityTime1.setHeight(70);
-//                }
-//            }
-//        });
-
-        // Attempt 3:
-
-//        Button city1hide = clock1.findViewById(R.id.hideSwitch);
-//
-//
-//
-//        city1hide.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                cityImage1.setImageAlpha(0);
-////
-//            }
-////
-//
-//        });
-
-
-        //Attempt4:
-
-//        city1hide.setChecked(true);
-//        city1hide.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean bChecked) {
-//                if (bChecked) {
-//                    cityImage1.setImageAlpha(0);
-//                } else {
-//                    cityImage1.setImageAlpha(0);
-//                }
-//            }
-//        });
-
-
-        //Attempt 5
-
-
-        Button hide1Button = findViewById(R.id.hideSwitch);
+        //hide and unhide onclick listeners
 
         hide1Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                cityName1.setHeight(0);
-                cityImage1.setVisibility(View.GONE);
-                cityTime1.setHeight(0);
+                if(hide1Button.getText().equals("Hide")){
+
+                    cityName1.setHeight(0);
+                    cityImage1.setVisibility(View.GONE);
+                    cityTime1.setHeight(0);
+                    hide1Button.setText("Sydney");
+                    hide1Button.setBackgroundColor(Color.rgb(67,170,139));
+                    hide1Button.setTextColor(Color.rgb(255,255,255));
+
+
+                    ;
+                }
+
+                else{
+                    cityName1.setHeight(100);
+                    cityImage1.setVisibility(View.VISIBLE);
+                    cityTime1.setHeight(100);
+                    hide1Button.setText("Hide");
+                    hide1Button.setBackgroundColor(Color.rgb(207,92,54));
+                    hide1Button.setTextColor(Color.rgb(255,255,255));
+
+
+
+                }
+
+
+
+
+
+            }
+        });
+
+        hide2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(hide2Button.getText().equals("Hide")){
+
+                    cityName2.setHeight(0);
+                    cityImage2.setVisibility(View.GONE);
+                    cityTime2.setHeight(0);
+                    hide2Button.setText("New York");
+                    hide2Button.setBackgroundColor(Color.rgb(67,170,139));
+                    hide2Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+                else{
+                    cityName2.setHeight(100);
+                    cityImage2.setVisibility(View.VISIBLE);
+                    cityTime2.setHeight(100);
+                    hide2Button.setText("Hide");
+                    hide2Button.setBackgroundColor(Color.rgb(207,92,54));
+                    hide2Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+
+
+
+
+            }
+        });
+
+
+        hide3Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(hide3Button.getText().equals("Hide")){
+
+                    cityName3.setHeight(0);
+                    cityImage3.setVisibility(View.GONE);
+                    cityTime3.setHeight(0);
+                    hide3Button.setText("Shanghai");
+                    hide3Button.setBackgroundColor(Color.rgb(67,170,139));
+                    hide3Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+                else{
+                    cityName3.setHeight(100);
+                    cityImage3.setVisibility(View.VISIBLE);
+                    cityTime3.setHeight(100);
+                    hide3Button.setText("Hide");
+                    hide3Button.setBackgroundColor(Color.rgb(207,92,54));
+                    hide3Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+
+
+
+
+            }
+        });
+
+
+        hide4Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(hide4Button.getText().equals("Hide")){
+
+                    cityName4.setHeight(0);
+                    cityImage4.setVisibility(View.GONE);
+                    cityTime4.setHeight(0);
+                    hide4Button.setText("London");
+                    hide4Button.setBackgroundColor(Color.rgb(67,170,139));
+                    hide4Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+                else{
+                    cityName4.setHeight(100);
+                    cityImage4.setVisibility(View.VISIBLE);
+                    cityTime4.setHeight(100);
+                    hide4Button.setText("Hide");
+                    hide4Button.setBackgroundColor(Color.rgb(207,92,54));
+                    hide4Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+
+
+
+
+            }
+        });
+
+        hide5Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(hide5Button.getText().equals("Hide")){
+
+                    cityName5.setHeight(0);
+                    cityImage5.setVisibility(View.GONE);
+                    cityTime5.setHeight(0);
+                    hide5Button.setText("Paris");
+                    hide5Button.setBackgroundColor(Color.rgb(67,170,139));
+                    hide5Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+                else{
+                    cityName5.setHeight(100);
+                    cityImage5.setVisibility(View.VISIBLE);
+                    cityTime5.setHeight(100);
+                    hide5Button.setText("Hide");
+                    hide5Button.setBackgroundColor(Color.rgb(207,92,54));
+                    hide5Button.setTextColor(Color.rgb(255,255,255));
+                }
+
+
+
+
 
             }
         });
